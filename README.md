@@ -29,7 +29,8 @@ The aquifer height ![\hat{h}](https://latex.codecogs.com/svg.image?\hat{h}) evol
 
 These equations were solved using seperation of variables and similarity methods to reduce them to ODE's and then the **shooting method** to solve their ODE.
 
-<img width="261" height="176" alt="image" src="https://github.com/user-attachments/assets/7cbcef9f-fa14-49d3-8b22-dc9a01443238" /> <img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/efc13cab-fe74-4f32-a21b-9b97631880a6" />
+<img width="261" height="176" alt="image" src="https://github.com/user-attachments/assets/7cbcef9f-fa14-49d3-8b22-dc9a01443238" /> <img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/efc13cab-fe74-4f32-a21b-9b97631880a6" /> <img width="261" height="176" alt="image" src="https://github.com/user-attachments/assets/a20118da-1a6d-46db-bc31-930bf523a69a" />
+
 
 
 
