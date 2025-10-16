@@ -41,7 +41,7 @@ These equations were solved using seperation of variables and similarity methods
 Using the solved PDE's for the height of the aquifier with rain and drought. We find that the flux of the aquifier is proportional to the height of the aquifier at the boundary. 
 The model captures transitions between rainfall and drought using a transition time parameter (A), allowing both regimes to be joined smoothly. 
 
-<img width="1019" height="704" alt="image" src="https://github.com/user-attachments/assets/45498530-54b6-4fe0-8937-3312e7b07956" />
+<img width="510" height="352" alt="image" src="https://github.com/user-attachments/assets/45498530-54b6-4fe0-8937-3312e7b07956" />
 
 
 ---
