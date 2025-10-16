@@ -49,7 +49,7 @@ The model captures transitions between rainfall and drought using a transition t
 
 Model parameters were fitted to USGS hydrograph data from four U.S. regions using least-squares minimization.
 
-| Region   | Parameter 1 \( \frac{R^{3/2} K^{1/2}}{\phi} \) | Parameter 2 \( \frac{\phi^2 L^3}{K} \) |
+| Region   | Parameter 1  | Parameter 2 |
 |-----------|-----------------------------------------------|----------------------------------------|
 | Virginia  | 0.213                                         | 1841.3                                 |
 | Georgia   | 0.261                                         | 322.9                                  |
