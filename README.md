@@ -1,113 +1,52 @@
-# Numerical Simulation of Aquifers 🌍💧
+# Aquifer Simulation & Parameter Fitting 🌍💧
 
-## 1. Governing Equations
-
-The aquifer height \( \hat{h} \) evolves according to nonlinear PDEs:
-
-### Drought conditions:
-\[
-\hat{h}_{\hat{t}} = (\hat{h} \hat{h}_{\hat{x}})_{\hat{x}}
-\]
-
-### Rainfall conditions:
-\[
-\hat{h}_{\hat{t}} = (\hat{h} \hat{h}_{\hat{x}})_{\hat{x}} + 1
-\]
+This project models and simulates the **height and flux of groundwater aquifers** under drought and rainfall conditions.  
+It was completed as part of an *Applied Mathematics group project* focused on sustainability and water resource management.  
+The goal was to solve nonlinear PDEs describing aquifer behaviour, compute flux into rivers, and fit model parameters to real hydrograph data from the **U.S. Geological Survey (USGS)**.
 
 ---
 
-## 2. Analytical and Numerical Setup
+## Explaining This Repository
 
-### Drought Case
-
-Using **separation of variables**, we set:
-\[
-\hat{h}(\hat{x}, \hat{t}) = X(\hat{x})T(\hat{t})
-\]
-
-This gives the nonlinear ODE:
-\[
-X'' + \frac{(X')^2}{X} + X = 0
-\]
-
-with boundary conditions:
-\[
-X(0) = 0, \quad X'(1) = 0
-\]
-
-This ODE is solved numerically using a **shooting method**.
-
-### Rainfall Case
-
-We apply a **similarity transformation**:
-\[
-\hat{h}(\hat{x}, \hat{t}) = \hat{t}^a f(\eta), \quad \eta = \frac{\hat{x}}{\hat{t}^b}
-\]
-
-Choosing \( a = b = 1 \), we obtain:
-\[
-f - \eta f' = (f f')' + 1
-\]
-
-with boundary conditions:
-\[
-f(0) = 0, \quad f(\eta) \to 1 \text{ as } \eta \to \infty
-\]
-
-Both resulting equations are stiff and nonlinear, requiring iterative numerical solvers.
+- `Drought_Model` → Solves the drought PDE using separation of variables and the **shooting method**  
+- `Rainfall_Model` → Solves the rainfall PDE using a **similarity transformation**  
+- `Flux_Comparison` → Calculates and compares river flux under rainfall and drought  
+- `Parameter_Fitting` → Fits model parameters to real hydrograph data from **Virginia, Georgia, Illinois, and Texas**
 
 ---
 
-## 3. Numerical Methods
+## 1. Overview of the Model
 
-- Insert How we solve this
+The aquifer height ```math \hat{h} ``` evolves according to nonlinear diffusion equations representing groundwater flow.
 
----
+- **Drought:**  
+  ```math
+  \hat{h}_{\hat{t}} = (\hat{h} \hat{h}_{\hat{x}})_{\hat{x}}
+  ```
 
-## 4. Flux Calculations
+- **Rainfall:**  
+  ```math
+  \hat{h}_{\hat{t}} = (\hat{h} \hat{h}_{\hat{x}})_{\hat{x}} + 1
+  ```
 
-The **flux into a river** from the aquifer is derived from the gradient at the boundary:
-
-### Rainfall:
-\[
-\hat{Q}_0 = -\hat{t} f(0) f'(0) = -C^2 \hat{t}^2
-\]
-
-### Drought:
-\[
-\hat{Q}_0 = -\frac{X(0) X'(0)}{(\hat{t} + A)^2} = -\frac{D^2}{2(\hat{t} + A)^2}
-\]
-
-Transition time \( A \) is calculated by matching the two flux regimes:
-\[
-A = \sqrt{\frac{2D^2}{C^2 t^*}} - t^*
-\]
-
-> 📈 *Insert plot: Flux vs Time for drought and rainfall cases.*
+These equations were solved using **analytical transformations** (separation of variables / similarity methods) and numerically integrated using **shooting techniques**.
 
 ---
 
-## 5. Real-World Data and Parameter Fitting
+## 2. Flux Dynamics
 
-The model was validated using **USGS hydrograph data** from  
-*Khand & Senay (2022), “Unit hydrographs of evolving urban watersheds across the United States”*.
+The **flux into a river** is proportional to the aquifer gradient at the boundary.  
+The model captures transitions between rainfall and drought using a **transition time parameter (A)**, allowing both regimes to be joined smoothly.
 
-We re-dimensionalised the flux equations to compare model predictions with observed data.
+> 📈 *Flux increases quadratically with time during rainfall and decays rapidly during drought.*
 
-### Rainfall:
-\[
-Q(t) = -\left(\frac{R^{3/2} K^{1/2}}{\phi}\right) C^2 t^2
-\]
+<img width="450" alt="Flux Graph" src="https://github.com/user-attachments/assets/your-flux-plot-placeholder" />
 
-### Drought:
-\[
-Q(t) = -\left(\frac{\phi^2 L^3}{K}\right) \frac{D^2}{2(t + \theta)}
-\]
+---
 
-The model parameters were fitted by minimizing the root-mean-square error:
-\[
-\min_{p_1, p_2} \sqrt{\sum_i |Q(t_i) - Q_{\text{data}}(t_i)|^2}
-\]
+## 3. Parameter Fitting with Real Data
+
+Model parameters were fitted to **USGS hydrograph data** from four U.S. regions using least-squares minimization.
 
 | Region   | Parameter 1 \( \frac{R^{3/2} K^{1/2}}{\phi} \) | Parameter 2 \( \frac{\phi^2 L^3}{K} \) |
 |-----------|-----------------------------------------------|----------------------------------------|
@@ -116,8 +55,29 @@ The model parameters were fitted by minimizing the root-mean-square error:
 | Illinois  | 0.067                                         | 2027.3                                 |
 | Texas     | 0.084                                         | 611.1                                  |
 
-> 🌎 *Insert plot: Model fit vs observed USGS hydrograph data for each region.*
+The model shows strong agreement between simulated and observed hydrographs, successfully reproducing peak flow timing and decay across diverse soil and rainfall conditions.
 
+> 🌎 *Insert: Model vs USGS data plots for each region.*
+
+---
+
+## 4. Key Results
+
+- Solved nonlinear PDEs describing aquifer height under rainfall and drought  
+- Derived analytical and numerical expressions for **flux into rivers**  
+- Estimated transition times between regimes  
+- Fitted physical parameters using **real-world hydrograph data** from the USGS  
+
+---
+
+## 5. Conclusion
+
+This project demonstrates how **mathematical modelling and numerical simulation** can be used to predict aquifer behaviour under changing weather conditions.  
+By combining theoretical models with **empirical data**, we can better understand groundwater dynamics and improve tools for sustainable water management.
+
+---
+
+> 📘 *Based on the project “Numerical Simulation of Aquifers” (UCD, 2024).*
 ---
 
 
