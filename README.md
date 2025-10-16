@@ -58,9 +58,7 @@ Model parameters were fitted to USGS hydrograph data from four U.S. regions usin
 
 The model shows strong agreement between simulated and observed hydrographs, successfully reproducing peak flow timing and decay across diverse soil and rainfall conditions.
 
-<img width="270.5" height="198" alt="image" src="https://github.com/user-attachments/assets/98d190bf-f095-4db6-87ee-82c4a50a2216" />  <img width="270.5" height="198" alt="image" src="https://github.com/user-attachments/assets/875c807b-2ae1-4809-818a-b5df3cac966f" />
-
-<img width="270.5" height="198" alt="image" src="https://github.com/user-attachments/assets/c57ac734-b766-4319-a110-cff382d3e467" />  <img width="270.5" height="198" alt="image" src="https://github.com/user-attachments/assets/40a53201-58f5-4ef8-b980-c4282e1125fc" />
+<img width="270.5" height="198" alt="image" src="https://github.com/user-attachments/assets/98d190bf-f095-4db6-87ee-82c4a50a2216" />  <img width="270.5" height="198" alt="image" src="https://github.com/user-attachments/assets/875c807b-2ae1-4809-818a-b5df3cac966f" /> <img width="270.5" height="198" alt="image" src="https://github.com/user-attachments/assets/c57ac734-b766-4319-a110-cff382d3e467" />  <img width="270.5" height="198" alt="image" src="https://github.com/user-attachments/assets/40a53201-58f5-4ef8-b980-c4282e1125fc" />
 
 
 
