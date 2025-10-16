@@ -17,7 +17,7 @@ The goal was to solve nonlinear PDEs describing aquifer behaviour, compute flux 
 
 ## 1. Overview of the Model
 
-The aquifer height $ \hat{h} $ evolves according to nonlinear diffusion equations representing groundwater flow.
+The aquifer height ![\hat{h}](https://latex.codecogs.com/svg.image?\hat{h}) evolves according to nonlinear diffusion equations representing groundwater flow.
 
 - **Drought:**  
   ```math
