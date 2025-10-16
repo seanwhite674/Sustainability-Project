@@ -29,7 +29,7 @@ The aquifer height ![\hat{h}](https://latex.codecogs.com/svg.image?\hat{h}) evol
   \hat{h}_{\hat{t}} = (\hat{h} \hat{h}_{\hat{x}})_{\hat{x}} + 1
   ```
 
-These equations were solved using **analytical transformations** (separation of variables / similarity methods) and numerically integrated using **shooting techniques**.
+These equations were solved using similarity methods to reduce them to ODE's and then the **shooting method** to solve their ODE.
 
 ---
 
